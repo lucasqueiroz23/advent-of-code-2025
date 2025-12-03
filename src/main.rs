@@ -8,8 +8,11 @@ enum RotationDirections {
     Null,
 }
 
+// TODO: mover pra um módulo próprio (pra utilizar em outros dias)
 fn get_input() -> Vec<String> {
+    // TODO: tratar corretamente (remover expect)
     let mut file = File::open("input").expect("file should exist");
+
     let mut contents = String::new();
     let _ = file.read_to_string(&mut contents);
 
@@ -50,6 +53,7 @@ fn main() {
             break;
         }
 
+        // TODO: tratar corretamente (remover expect)
         let rotation_value: i32 = content[1..].parse().expect("value should exist");
         point = update_pointer(rotation, point, rotation_value);
 
